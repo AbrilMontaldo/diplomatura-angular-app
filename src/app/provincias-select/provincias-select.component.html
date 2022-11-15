@@ -1,0 +1,25 @@
+
+<!-- <select>
+    <option disabled selected>Seleccionar una opción...</option>
+    <option value="1">Buenos Aires</option>
+    <option value="2">CABA</option>
+    <option value="3">Catamarca</option>
+    <option value="4">Chaco</option>
+    <option value="5">Chubut</option>
+    <option value="6">Córdoba</option>
+    <option value="7">Corrientes</option>
+    <option value="8">Entre Ríos</option>
+</select> -->
+
+<label for="provinciasSelect" class="form-label">Provincia</label>
+<select class="form-select">
+    <option disabled selected>Seleccionar una opción...</option>
+    <option *ngFor="let p of provincias" [value]="p.id">
+        {{p.nombre}}
+    </option>
+
+    <!-- <option>{{provincia}}</option> -->
+    <!-- <option value="Buenos Aires">
+        Buenos Aires
+    </option> -->
+</select>
