@@ -11,15 +11,20 @@
     <option value="8">Entre Ríos</option>
 </select> -->
 
-<label for="provinciasSelect" class="form-label">Provincia</label>
+<!-- <label for="provinciasSelect" class="form-label">Provincia</label>
 <select class="form-select">
     <option disabled selected>Seleccionar una opción...</option>
     <option *ngFor="let p of provincias" [value]="p.id">
         {{p.nombre}}
     </option>
+</select> -->
 
-    <!-- <option>{{provincia}}</option> -->
-    <!-- <option value="Buenos Aires">
-        Buenos Aires
-    </option> -->
+
+<select name="provinciasSelect" id="" [(ngModel)]="provinciaSlctd">
+    <option value="">Seleccione una provincia</option>
+    <option *ngFor="let provincia of provincias" [ngValue]=provincia>
+        {{provincia.nombre}}
+    </option>
 </select>
+
+<h1>Provincia seleccionada: {{provinciaSlctd.nombre}}</h1>

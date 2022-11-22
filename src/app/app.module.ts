@@ -5,16 +5,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProvinciasSelectComponent } from './provincias-select/provincias-select.component';
 import { ArticulosListComponent } from './articulos-list/articulos-list.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProvinciasSelectComponent,
-    ArticulosListComponent
+    ArticulosListComponent,
+    ProvinciasSelectComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
