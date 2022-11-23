@@ -1,12 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import {ProvinciasSrvService} from '../services/provincias.service';
+import { ProvinciasService } from '../services/provincias.service';
 
+export interface Provincia {
+  id: number;
+  nombre: string;
+  api: string;
+}
 @Component({
   selector: 'app-provincias-select',
   templateUrl: './provincias-select.component.html',
-  styleUrls: ['./provincias-select.component.css']
+  styleUrls: ['./provincias-select.component.css'],
 })
-
 export class ProvinciasSelectComponent implements OnInit {
   // provincias: string[] = [
   //   'Buenos Aires',
@@ -18,21 +22,19 @@ export class ProvinciasSelectComponent implements OnInit {
   //   'Corrientes',
   //   'Entre Ríos',
   // ]
-  provincias: any[] = []
+  provincias: Provincia[] = [];
 
-  provinciaSlctd: any = {
+  provinciaSlctd: Provincia = {
     id: 0,
     nombre: '',
-    url: ''
-  }
+    api: '',
+  };
 
-  constructor(private provSrv: ProvinciasSrvService) {
+  constructor(private provSrv: ProvinciasService) {
     provSrv.getProvincias().subscribe((data: any) => {
       this.provincias = data;
-    })
-   }
-
-  ngOnInit(): void {
+    });
   }
 
+  ngOnInit(): void {}
 }

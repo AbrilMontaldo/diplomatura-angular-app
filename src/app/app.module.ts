@@ -13,15 +13,9 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     ProvinciasSelectComponent,
     ArticulosListComponent,
-    ProvinciasSelectComponent
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    AppRoutingModule,
-    FormsModule
-  ],
+  imports: [BrowserModule, HttpClientModule, AppRoutingModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

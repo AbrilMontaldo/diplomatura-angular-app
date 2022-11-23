@@ -2,11 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class ProvinciasSrvService {
-
-  constructor(private http: HttpClient) { }
+export class ProvinciasService {
+  constructor(private http: HttpClient) {}
 
   getProvincias() {
     // return this.http.get('https://panalsoft.com/precios-justos/api/v1/provincias.json');
