@@ -24,7 +24,7 @@ export class ProvinciasService {
           delete aux.api;
           return aux;
         });
-        console.log(respuesta);
+        // console.log(respuesta);
 
         return respuesta;
       })
