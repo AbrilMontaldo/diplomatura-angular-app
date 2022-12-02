@@ -19,8 +19,7 @@
     </option>
 </select> -->
 
-
-<select name="provinciasSelect" id="" [(ngModel)]="provinciaSlctd">
+<select class="form-select" name="provinciasSelect" [(ngModel)]="provinciaSlctd">
     <option value="">Seleccione una provincia</option>
     <option *ngFor="let provincia of provincias" [ngValue]=provincia>
         {{provincia.nombre}}
