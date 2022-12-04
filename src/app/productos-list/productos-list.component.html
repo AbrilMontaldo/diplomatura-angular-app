@@ -1,18 +1,20 @@
 
 <div class="container">
+    <div class="text-center mb-5">
+        <!-- <a class="btn btn-link float-start" (click)="goBack()">Volver</a> -->
+        <a class="btn btn-link float-start" routerLink="/provincias" >Volver</a>
+        <h1>Productos de {{ provinciaSlctd }}</h1>
+    </div>
     <div class="row">
-        <div class="col-12">
-            <a class="btn btn-info" routerLink="/provincias" >Volver</a>
-            <!-- <a class="btn btn-info" (click)="goBack()">Volver</a> -->
-        </div>
-        <div class="col-12">
-            <h1>Productos de {{ provinciaSlctd }}</h1>
-        </div>
-        <div class="card col-sm-3 mb-2" *ngFor="let producto of productos">
-            <div class="card-body">
-                <h5 class="card-title">{{producto.nombre}}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">{{producto.ean}}</h6>
-                <p class="card-text">{{producto.precio}}</p>
+        <div class="card-group col-sm-3 g-3" *ngFor="let producto of productos">
+            <div class="card" >
+                <div class="card-body">
+                    <h5 class="card-title">{{producto.nombre}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{producto.ean}}</h6>
+                </div>
+                <div class="px-2 pb-2">
+                    <h5><span class="badge text-bg-primary float-end">${{producto.precio}}</span></h5>
+                </div>
             </div>
         </div>
     </div>
