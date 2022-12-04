@@ -6,28 +6,24 @@ import { ProductosListComponent } from './productos-list/productos-list.componen
 import { ProvinciasSelectComponent } from './provincias-select/provincias-select.component';
 
 const routes: Routes = [
-  { path: '', 
-    component: HomeComponent 
-  },
+  { path: '', component: HomeComponent },
   {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
   },
   {
     path: 'provincias',
     component: ProvinciasSelectComponent,
   },
   {
-    path: 'productos',
+    path: 'provincias/:nombreProvincia/productos',
     component: ProductosListComponent,
   },
-  { path: '**', 
-    component: P404Component
-  }
+  { path: '**', /* redirectTo: '/home' */ component: P404Component },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

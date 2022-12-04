@@ -1,6 +1,13 @@
 
 <div class="container">
     <div class="row">
+        <div class="col-12">
+            <a class="btn btn-info" routerLink="/provincias" >Volver</a>
+            <!-- <a class="btn btn-info" (click)="goBack()">Volver</a> -->
+        </div>
+        <div class="col-12">
+            <h1>Productos de {{ provinciaSlctd }}</h1>
+        </div>
         <div class="card col-sm-3 mb-2" *ngFor="let producto of productos">
             <div class="card-body">
                 <h5 class="card-title">{{producto.nombre}}</h5>
