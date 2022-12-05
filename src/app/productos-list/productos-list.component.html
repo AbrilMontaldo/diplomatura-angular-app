@@ -6,7 +6,34 @@
         <h1>Productos de {{ provinciaSlctd }}</h1>
     </div>
     <div class="row">
-        <div class="card-group col-sm-3 g-3" *ngFor="let producto of productos">
+        <div class="col-sm-8">
+            <div class="form-group">
+                <!-- <label for="filtroTexto" class="form-label">Buscá por nombre o por código</label> -->
+                <input
+                    [(ngModel)]="filtroTexto"
+                    (ngModelChange)="onFiltroTextoChange($event)"
+                    type="text"
+                    class="form-control"
+                    id="filtroTexto"
+                    placeholder="Buscá por nombre o por código"
+                >
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <input
+                [(ngModel)]="filtroPrecio"
+                (ngModelChange)="onFiltroPrecioChange($event)"
+                [max]="precioMaximo"
+                type="range"
+                class="form-range"
+                id="filtroPrecio"
+            >
+            <label for="filtroPrecio" class="form-label">Precio máximo - seleccionado: ${{filtroPrecio}}</label>
+        </div>
+    </div>
+
+    <div class="row" *ngIf="productosFiltrados.length > 0; else noHayProductosBlock">
+        <div class="card-group col-sm-3 g-3" *ngFor="let producto of productosFiltrados">
             <div class="card" >
                 <div class="card-body">
                     <h5 class="card-title">{{producto.nombre}}</h5>
@@ -18,4 +45,11 @@
             </div>
         </div>
     </div>
+
+    <ng-template #noHayProductosBlock>
+        <div class="alert alert-warning" role="alert">
+            No hay productos para mostrar
+        </div>
+    </ng-template>
+
 </div>
