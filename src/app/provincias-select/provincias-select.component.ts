@@ -43,16 +43,15 @@ export class ProvinciasSelectComponent implements OnInit {
   }
 
   handleOnClickButton() {
-    this.router.navigateByUrl(
-      `/provincias/${this.provinciaSlctd.nombre
-        .toLowerCase()
-        .replace(/ /g, '-')}/productos`
-    );
-    /* console.log(this.provinciaSlctd);
+    // this.router.navigateByUrl(
+    //   `/provincias/${this.provinciaSlctd.nombre
+    //     .toLowerCase()
+    //     .replace(/ /g, '-')}/productos`
+    // );
 
     this.router.navigateByUrl(
       `/provincias/${this.provinciaSlctd.url}/productos`
-    ); */
+    );
   }
 
   ngOnInit(): void {}
